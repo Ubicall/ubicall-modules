@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ubicall-modules by waleedsamy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Ubicall-modules</h1>
+      <h2 class="project-tagline">Details about ubicall architecture, technologies and subsystems used to deliver ubicall to you</h2>
+      <a href="https://github.com/waleedsamy/ubicall-modules" class="btn">View on GitHub</a>
+      <a href="https://github.com/waleedsamy/ubicall-modules/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/waleedsamy/ubicall-modules/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="ubicall-modules" class="anchor" href="#ubicall-modules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ubicall-modules</h1>
+
+<blockquote>
+<p>Details about Ubicall architecture, technologies and subsystems used to deliver ubicall to you</p>
+</blockquote>
+
+<p>Microservices architecture is a trend this days and we in ubicall are very interesting in integrate it in all component we use. usually we separate front end and back end projects/teams, and every one has his plan of deployment.
+build our stack up on technologies like nodejs, angularJs, mongodb, BDD, travis-ci, docker, mysql, php, redis.</p>
+
+<p>Tools which are shared a cross all stack include gruntjs, jshint, jsbeautify, git</p>
+
+<p>We trust nginx as a web server for hosting all our statics content and as load balancer for all our applications nodes.</p>
+
+<p><strong>how we add a feature :</strong></p>
+
+<ul>
+<li>it all start with github issue (with custom tags)</li>
+<li>scope of change is determined</li>
+<li>choose the release date</li>
+<li>feature/fix branch is created</li>
+<li>developer open a pull request (if test pass, fast code review will done)</li>
+<li>beta release date is determined (deploy in test server)</li>
+<li>merge pull request to stable branch (which will be fetch and deployed with next release date)</li>
+</ul>
+
+<p><strong>components behind this all :</strong></p>
+
+<ul>
+<li>
+<p>node-red fork</p>
+
+<blockquote>
+<p>we forked <a href="https://github.com/Ubicall/node-red">node-red</a>, A visual tool for wiring the Internet of Things, and tweak it a little bit by build easily configurable components used to simulate UI, call web service and take actions based on a decision.</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>back end : nodejs, mongodb, oauth 2.0, promises, travis-ci, BDD, gruntjs</li>
+<li>front end: d3.js, jquery, bootstrap</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>web service</p>
+
+<blockquote>
+<p>our back end core, which mange and connect all ubicall stack.</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>nodejs, oauth 2.0, promises, mongodb, redis, BDD, travis-ci, docker, gruntjs</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>ubicall cache</p>
+
+<blockquote>
+<p>ubicall cache layer build with redis (not done yet)</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>nodejs, redis</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>ubicall oauth</p>
+
+<blockquote>
+<p>OAuth 2.0 layer, on top of all back end components in our stack.</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>nodejs, expressjs, passport, oauth2orize, JWT, mongodb, mysql, gruntjs</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>ubicall conf</p>
+
+<blockquote>
+<p>one place to configure all ubicall stack, contain json style of configuration and secret credentials for our stack, it contain init-ubicall script, which is responsible for initializing any blank linux machine to minimum requirement for running our stack.</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>nodejs, docker, bash</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>ubicall agent</p>
+
+<blockquote>
+<p>main screen for call center agents, used to find history of their calls and available clients requesting a call, some reports (if you an admin it will be a fully one) and main feature is making calls using rtmp/flash (working integrate WEBRTC)</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>angularJs 1.x, bootstrap, flash, bower, gruntjs</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>ubicall bower dependencies</p>
+
+<blockquote>
+<p>use bowerjs to help use with our front end libraries, specially ones shared a cross all front end applications, this libraries are hosted in our cdn.</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>bower, gruntjs</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>ubicall embedded widget</p>
+
+<blockquote>
+<p>if you a client this is fast and easy way it integrate with us, this is our web widget, that will appear in your site by adding two lines of javscript, changes you made in designer will appear here instantly.</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>nodejs, jquery, cheerio</li>
+</ul>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>native mobile applications</p>
+
+<blockquote>
+<p>a native application with same content as your widget, available for both ios and android</p>
+</blockquote>
+</li>
+</ul>
+
+<hr>
+
+<ul>
+<li>
+<p>ubicall admin</p>
+
+<blockquote>
+<p>an admin interface for adding agents, manging reports and configure most parts of stack</p>
+</blockquote>
+
+<p><strong>built with:</strong></p>
+
+<ul>
+<li>php, bootstrap, mysql, mongodb</li>
+</ul>
+</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/waleedsamy/ubicall-modules">Ubicall-modules</a> is maintained by <a href="https://github.com/waleedsamy">waleedsamy</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
